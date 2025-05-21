@@ -1,0 +1,47 @@
+===================================================
+                                                     FOR USER
+===================================================
+READ USER DATA----GET
+https://foodiess-kluk.onrender.com/api/users
+-------------------------------------------------------------------------------------------------
+
+CREATE USER DATA-----POST
+https://foodiess-kluk.onrender.com/api/add
+
+DATA: BODY -> RAW
+{
+  "name": "Arun",
+  "email": "arun@exfdsfample.com",
+  "pass": "12345",
+  "address": "India",
+  "phone": 9876543210
+}
+
+--------------------------------------------------------------------------------------------------
+UPDATE USER DATA-----PUT
+https://foodiess-kluk.onrender.com/api/update/682ddecd366e90194c8bc151
+
+PUT: BODY -> X-WWW....
+--------------------------------------------------------------------------------------------------
+DELETE USER DATA-----DELETE
+https://foodiess-kluk.onrender.com/api/delete/682ddecd366e90194c8bc151
+DELETE
+
+
+===========================================================
+							FOOD DATA
+===========================================================
+READ FOOD DATA------GET
+https://foodiess-kluk.onrender.com/api/foods
+----------------------------------------------------------------------------------------------------------------
+CREATE FOOD DATA------PUSH
+https://foodiess-kluk.onrender.com/api/addFood
+GET: BODY -> FORM-DATA -> TYPE:TEXT FOR DETAILS AND TYPE:FILE FOR IMAGE
+-----------------------------------------------------------------------------------------------------------------
+UPDATE FOOD
+https://foodiess-kluk.onrender.com/api/updateFood/682dd295f61473fe47512516
+PUT: BODY -> FORM-DATA -> TYPE:TEXT FOR DETAILS AND TYPE:FILE FOR IMAGE
+-----------------------------------------------------------------------------------------------------------------
+DELETE FOOD DATA------DELETE
+https://foodiess-kluk.onrender.com/api/deleteFood/682dd295f61473fe47512516
+DELETE
