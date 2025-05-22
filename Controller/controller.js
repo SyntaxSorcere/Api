@@ -219,6 +219,39 @@ const loginUser = async (req, res) => {
   }
 };
 
+// SEARCH user by email
+const searchUser = async (req, res) => {
+  try {
+    const email = req.params.email;  // email passed as route param
+
+    const userObj = await userModel.findOne({ user_email: email });
+
+    if (!userObj) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    return res.status(200).json({ message: "User found", user: userObj });
+  } catch (error) {
+    return res.status(500).json({ message: "Error searching user", error: error.message });
+  }
+};
+
+const searchFoodById = async (req, res) => {
+  try {
+    const foodId = req.params.id;
+
+    const foodItem = await foodModel.findById(foodId);
+
+    if (!foodItem) {
+      return res.status(404).json({ message: "Food item not found" });
+    }
+
+    return res.status(200).json({ message: "Food item found", food: foodItem });
+  } catch (error) {
+    return res.status(500).json({ message: "Error searching food item", error: error.message });
+  }
+};
+
 
 module.exports = {
     createUser,
@@ -229,7 +262,9 @@ module.exports = {
     getAllFood,
     deleteFood,
     updateFood,
-    loginUser
+    loginUser,
+    searchUser,
+    searchFoodById
 };
 
 console.log("User Controller is working");
